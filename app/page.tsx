@@ -7,8 +7,8 @@ function Page() {
   return (
     <>
       <Hero />
-      {/* <About />
-      <Projects />
+      <About />
+      {/* <Projects />
       <Contact /> */}
     </>
   );
