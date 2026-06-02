@@ -11,7 +11,7 @@ function NavbarPage() {
   ];
 
   return (
-    <header className={`w-full top-0 left-0 sticky z-50 flex justify-center ${dm_mono.className} text-white`}>
+    <header className={`w-full top-0 left-0 sticky z-50 flex justify-center ${dm_mono.className} text-white border-b`}>
       <div className="flex justify-between items-center py-2 px-6 w-7xl m-6 border rounded-4xl bg-black border-white">
         <div>
           <h1 className="text-xl font-bold">Sasher Gurung</h1>

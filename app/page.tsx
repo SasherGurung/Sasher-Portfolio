@@ -5,13 +5,13 @@ import Contact from '@/components/Contact'
 
 function Page() {
   return (
-    <section>
+    <>
       <Hero />
       {/* <About />
       <Projects />
       <Contact /> */}
-    </section>
-  )
+    </>
+  );
 }
 
 export default Page
