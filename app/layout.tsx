@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/layouts/Navbar";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
-import GridBackgroundDemo from "@/components/grid-background-demo"
+import GridBackgroundDemo from "@/components/ui/grid-background-demo"
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -22,7 +22,7 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full antialiased", "font-sans", geist.variable)}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col text-white">
         <GridBackgroundDemo />
         <Navbar />
         {children}

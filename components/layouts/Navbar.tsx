@@ -4,10 +4,10 @@ import Link from "next/link";
 
 function NavbarPage() {
   const navLinks = [
-    { label: "Home", link: "/" },
-    { label: "About", link: "/about" },
-    { label: "Portfolio", link: "/projects" },
-    { label: "Contact", link: "/contact" },
+    { label: "Home", link: "#home" },
+    { label: "About", link: "#about" },
+    { label: "Portfolio", link: "#projects" },
+    { label: "Contact", link: "#contact" },
   ];
 
   return (

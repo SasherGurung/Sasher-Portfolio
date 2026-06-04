@@ -8,8 +8,8 @@ function Page() {
     <>
       <Hero />
       <About />
-      {/* <Projects />
-      <Contact /> */}
+      <Projects />
+      {/* <Contact /> */}
     </>
   );
 }

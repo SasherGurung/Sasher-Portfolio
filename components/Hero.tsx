@@ -1,6 +1,6 @@
 "use client";
 
-import TiltedCard from "@/components/TiltedCard";
+import TiltedCard from "@/components/ui/TiltedCard";
 import { dm_mono } from "@/app/fonts";
 import TextType from "@/components/ui/TextType";
 import { TbBrandTypescript } from "react-icons/tb";
@@ -17,7 +17,7 @@ function HeroPage() {
   ];
 
   return (
-    <section className={`min-h-screen text-white ${dm_mono.className} m-10`}>
+    <section id="hero" className={`min-h-screen ${dm_mono.className} m-10 scroll-mt-30`}>
       <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-6xl mx-auto px-6 md:px-10 gap-10">
         <div className="space-y-6">
           <p className="text-xs tracking-[0.25em] text-emerald-400 uppercase">

@@ -1,26 +1,27 @@
 "use client";
 
 import { dm_mono } from "@/app/fonts";
-import TiltedCard from "@/components/TiltedCard";
+import TiltedCard from "@/components/ui/TiltedCard";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { GoArrowUpRight } from "react-icons/go";
 
 function AboutPage() {
   return (
-    <section className={`min-h-screen text-white ${dm_mono.className}`}>
-      <h1 className="text-center text-xl font-bold tracking-[0.3em] text-gray-400 mb-16">
+    <section
+      id="about"
+      className={`min-h-screen text-white ${dm_mono.className} scroll-mt-30`}
+    >
+      <h1 className="text-center text-3xl font-bold tracking-[0.4em] text-gray-400 mb-16">
         MY PERSONAL INFORMATION
       </h1>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center px-6">
-        {/* Image */}
         <div className="flex justify-center">
           <div className="grayscale hover:grayscale-0 transition duration-500">
             <TiltedCard />
           </div>
         </div>
 
-        {/* Content */}
         <div className="space-y-6">
           <p className="text-gray-400 text-lg font-bold tracking-widest uppercase">
             About Me
@@ -38,12 +39,12 @@ function AboutPage() {
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="flex items-center gap-2 px-5 py-3 rounded-full bg-gray-200  hover:bg-white text-black font-medium hover:scale-105 transition-all duration-500">
+            <button className="cursor-pointer flex items-center gap-2 px-5 py-3 rounded-full bg-gray-200  hover:bg-white text-black font-medium hover:scale-105 transition-all duration-500">
               <IoDocumentTextOutline />
               Download CV
             </button>
 
-            <button className="flex items-center gap-2 px-5 py-3 rounded-full bg-gray-900 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-500">
+            <button className="cursor-pointer flex items-center gap-2 px-5 py-3 rounded-full bg-gray-900 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-500">
               <GoArrowUpRight />
               View Projects
             </button>
