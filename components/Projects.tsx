@@ -7,6 +7,7 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
+  CardFooter,
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
@@ -20,11 +21,11 @@ function ProjectsPage() {
       className={`min-h-screen relative ${dm_mono.className} scroll-auto`}
     >
       <GridBackgroundDemo />
-      <div className="relative m-10 my-25 ">
-        <h1 className="text-center text-3xl font-extrabold tracking-[0.4em] text-gray-400 m-5">
+      <div className="relative mt-30">
+        <h1 className="text-center text-3xl font-extrabold tracking-[0.4em] text-gray-400">
           PORTFOLIO SHOWCASE
         </h1>
-        <p className="text-center text-base">
+        <p className="text-center text-base m-5">
           Explore my journey with Projects, Certifications and TechStack.
         </p>
         <div className="flex justify-center">
@@ -38,74 +39,101 @@ function ProjectsPage() {
             </TabsList>
             <TabsContent value="projects">
               <Card className="bg-transparant">
-                <div className="grid grid-cols-3 gap-5">
-                  <div className="border bg-zinc-700 rounded-3xl flex flex-col justify-center items-center">
-                    <Image
-                      src="/assets/portfolio.png"
-                      alt="Portfolio Image"
-                      height={100}
-                      width={100}
-                    ></Image>
-                    <h1>Project Name</h1>
-                    <p className="line-clamp-2">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Omnis debitis doloremque magnam doloribus distinctio
-                      libero, molestias blanditiis praesentium officia ut quae
-                      atque sed nulla autem. Modi corrupti aperiam dolores ex.
-                    </p>
-                    <div className="flex justify-between w-full items-center p-5">
-                      <button className="text-white text-base cursor-pointer hover:scale-105 transition-all duration-300">No Link</button>
-                      <button className="bg-zinc-400 px-5 py-2 rounded-2xl text-white text-base flex items-center justify-center gap-2 cursor-pointer transition-all hover:bg-zinc-500 hover:scale-105 duration-300">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
+                  <Card className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50">
+                    <CardContent className="px-5">
+                      <Image
+                        src="/assets/portfolio.png"
+                        alt="Portfolio Image"
+                        width={500}
+                        height={250}
+                        className="w-full h-50 object-cover"
+                        priority
+                      />
+                    </CardContent>
+                    <CardHeader>
+                      <CardTitle className="text-white tracking-wide text-lg">
+                        Project Name
+                      </CardTitle>
+                      <CardDescription className="line-clamp-3">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Omnis debitis doloremque magnam doloribus
+                        distinctio libero, molestias blanditiis praesentium
+                        officia ut.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardFooter className="flex justify-between">
+                      <button className="text-md cursor-pointer">
+                        No Link
+                      </button>
+                      <button className="bg-zinc-400 px-4 py-2 rounded-xl flex items-center gap-2 border-gray-100 hover:bg-zinc-500 transition-all cursor-pointer text-md">
                         Details <FaArrowRightLong />
                       </button>
-                    </div>
-                  </div>
-
-                  <div className="border bg-zinc-700 rounded-3xl flex flex-col justify-center items-center">
-                    <Image
-                      src="/assets/portfolio.png"
-                      alt="Portfolio Image"
-                      height={100}
-                      width={100}
-                    ></Image>
-                    <h1>Project Name</h1>
-                    <p className="line-clamp-2">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Omnis debitis doloremque magnam doloribus distinctio
-                      libero, molestias blanditiis praesentium officia ut quae
-                      atque sed nulla autem. Modi corrupti aperiam dolores ex.
-                    </p>
-                    <div>
-                      <button>No Link</button>
-                      <button className="bg-zinc-400 px-4 py-2 rounded-2xl text-white w-[120px] flex items-center justify-center gap-2 cursor-pointer transition-all hover:bg-zinc-500 hover:scale-105 duration-300">
+                    </CardFooter>
+                  </Card>
+                  <Card className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50">
+                    <CardContent className="px-5">
+                      <Image
+                        src="/assets/portfolio.png"
+                        alt="Portfolio Image"
+                        width={500}
+                        height={250}
+                        className="w-full h-50 object-cover"
+                        priority
+                      />
+                    </CardContent>
+                    <CardHeader>
+                      <CardTitle className="text-white tracking-wide text-lg">
+                        Project Name
+                      </CardTitle>
+                      <CardDescription className="line-clamp-3">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Omnis debitis doloremque magnam doloribus
+                        distinctio libero, molestias blanditiis praesentium
+                        officia ut.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardFooter className="flex justify-between">
+                      <button className="text-md cursor-pointer">
+                        No Link
+                      </button>
+                      <button className="bg-zinc-400 px-4 py-2 rounded-xl flex items-center gap-2 border-gray-100 hover:bg-zinc-500 transition-all cursor-pointer text-md">
                         Details <FaArrowRightLong />
                       </button>
-                    </div>
-                  </div>
-
-                  <div className="border bg-zinc-700 rounded-3xl flex flex-col justify-center items-center">
-                    <Image
-                      src="/assets/portfolio.png"
-                      alt="Portfolio Image"
-                      height={100}
-                      width={100}
-                    ></Image>
-                    <h1>Project Name</h1>
-                    <p className="line-clamp-2">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Omnis debitis doloremque magnam doloribus distinctio
-                      libero, molestias blanditiis praesentium officia ut quae
-                      atque sed nulla autem. Modi corrupti aperiam dolores ex.
-                    </p>
-                    <div>
-                      <button>No Link</button>
-                      <button className="bg-zinc-400 px-4 py-2 rounded-2xl text-white w-[120px] flex items-center justify-center gap-2 cursor-pointer transition-all hover:bg-zinc-500 hover:scale-105 duration-300">
+                    </CardFooter>
+                  </Card>
+                  <Card className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50">
+                    <CardContent className="px-5">
+                      <Image
+                        src="/assets/portfolio.png"
+                        alt="Portfolio Image"
+                        width={500}
+                        height={250}
+                        className="w-full h-50 object-cover"
+                        priority
+                      />
+                    </CardContent>
+                    <CardHeader>
+                      <CardTitle className="text-white tracking-wide text-lg">
+                        Project Name
+                      </CardTitle>
+                      <CardDescription className="line-clamp-3">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Omnis debitis doloremque magnam doloribus
+                        distinctio libero, molestias blanditiis praesentium
+                        officia ut.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardFooter className="flex justify-between">
+                      <button className="text-md cursor-pointer">
+                        No Link
+                      </button>
+                      <button className="bg-zinc-400 px-4 py-2 rounded-xl flex items-center gap-2 border-gray-100 hover:bg-zinc-500 transition-all cursor-pointer text-md">
                         Details <FaArrowRightLong />
                       </button>
-                    </div>
-                  </div>
+                    </CardFooter>
+                  </Card>
                 </div>
-                
               </Card>
             </TabsContent>
 
