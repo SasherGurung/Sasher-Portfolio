@@ -8,7 +8,7 @@ import GridBackgroundDemo from "@/components/ui/grid-background-demo"
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  title: "Sasher Gurung — Frontend Developer",
+  title: "Sasher Gurung - Portfolio",
   description: "Portfolio of Sasher Gurung, frontend developer focused on React, Next.js, and clean UI.",
 };
 
