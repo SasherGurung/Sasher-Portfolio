@@ -149,7 +149,10 @@ function ProjectsPage() {
                           {project.link ? "Visit" : "No Link"}
                         </button>
 
-                        <Link href={project.link} className="bg-zinc-400 px-4 py-2 rounded-xl flex items-center gap-2 border-gray-100 hover:bg-zinc-500 transition-all cursor-pointer text-md">
+                        <Link
+                          href={project.link}
+                          className="bg-zinc-400 px-4 py-2 rounded-xl flex items-center gap-2 border-gray-100 hover:bg-zinc-500 transition-all cursor-pointer text-md"
+                        >
                           Details <FaArrowRightLong />
                         </Link>
                       </CardFooter>
