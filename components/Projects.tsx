@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+
 import GridBackgroundDemo from "@/components/ui/grid-background-demo";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { SiNextdotjs } from "react-icons/si";
@@ -21,6 +22,8 @@ import {
 import Image from "next/image";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import Link from "next/link";
 
 function ProjectsPage() {
   const techStack = [
@@ -61,8 +64,32 @@ function ProjectsPage() {
     },
     {
       title: "Git",
-      icon: <FaGithub  />,
+      icon: <FaGithub />,
       color: "text-orange-500",
+    },
+  ];
+
+  const certificates = [
+    {
+      title: "Internship Certificate",
+      image: "/certificates/internship.jpeg",
+    },
+  ];
+
+  const projects = [
+    {
+      title: "Shoe-care",
+      details: "",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      link: "https://shoe-care.vercel.app",
+      image: "/projects/shoe-care.png",
+    },
+    {
+      title: "Project Name",
+      details: "",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      link: "https://www.google.com",
+      image: "",
     },
   ];
 
@@ -91,201 +118,85 @@ function ProjectsPage() {
             <TabsContent value="projects">
               <Card className="bg-transparant">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
-                  <Card className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50">
-                    <CardContent className="px-5">
-                      <Image
-                        src="/assets/portfolio.png"
-                        alt="Portfolio Image"
-                        width={500}
-                        height={250}
-                        className="w-full h-50 object-cover"
-                        priority
-                      />
-                    </CardContent>
-                    <CardHeader>
-                      <CardTitle className="text-white tracking-wide text-lg">
-                        Project Name
-                      </CardTitle>
-                      <CardDescription className="line-clamp-3">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Omnis debitis doloremque magnam doloribus
-                        distinctio libero, molestias blanditiis praesentium
-                        officia ut.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardFooter className="flex justify-between">
-                      <button className="text-md cursor-pointer">
-                        No Link
-                      </button>
-                      <button className="bg-zinc-400 px-4 py-2 rounded-xl flex items-center gap-2 border-gray-100 hover:bg-zinc-500 transition-all cursor-pointer text-md">
-                        Details <FaArrowRightLong />
-                      </button>
-                    </CardFooter>
-                  </Card>
-                  <Card className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50">
-                    <CardContent className="px-5">
-                      <Image
-                        src="/assets/portfolio.png"
-                        alt="Portfolio Image"
-                        width={500}
-                        height={250}
-                        className="w-full h-50 object-cover"
-                        priority
-                      />
-                    </CardContent>
-                    <CardHeader>
-                      <CardTitle className="text-white tracking-wide text-lg">
-                        Project Name
-                      </CardTitle>
-                      <CardDescription className="line-clamp-3">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Omnis debitis doloremque magnam doloribus
-                        distinctio libero, molestias blanditiis praesentium
-                        officia ut.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardFooter className="flex justify-between">
-                      <button className="text-md cursor-pointer">
-                        No Link
-                      </button>
-                      <button className="bg-zinc-400 px-4 py-2 rounded-xl flex items-center gap-2 border-gray-100 hover:bg-zinc-500 transition-all cursor-pointer text-md">
-                        Details <FaArrowRightLong />
-                      </button>
-                    </CardFooter>
-                  </Card>
-                  <Card className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50">
-                    <CardContent className="px-5">
-                      <Image
-                        src="/assets/portfolio.png"
-                        alt="Portfolio Image"
-                        width={500}
-                        height={250}
-                        className="w-full h-50 object-cover"
-                        priority
-                      />
-                    </CardContent>
-                    <CardHeader>
-                      <CardTitle className="text-white tracking-wide text-lg">
-                        Project Name
-                      </CardTitle>
-                      <CardDescription className="line-clamp-3">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Omnis debitis doloremque magnam doloribus
-                        distinctio libero, molestias blanditiis praesentium
-                        officia ut.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardFooter className="flex justify-between">
-                      <button className="text-md cursor-pointer">
-                        No Link
-                      </button>
-                      <button className="bg-zinc-400 px-4 py-2 rounded-xl flex items-center gap-2 border-gray-100 hover:bg-zinc-500 transition-all cursor-pointer text-md">
-                        Details <FaArrowRightLong />
-                      </button>
-                    </CardFooter>
-                  </Card>
+                  {projects.map((project, index) => (
+                    <Card
+                      key={index}
+                      className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50"
+                    >
+                      <CardContent className="px-5">
+                        <Image
+                          src={project.image || "/assets/portfolio.png"}
+                          alt={project.title}
+                          width={500}
+                          height={250}
+                          className="w-full h-50 object-cover"
+                          priority
+                        />
+                      </CardContent>
+
+                      <CardHeader>
+                        <CardTitle className="text-white tracking-wide text-lg">
+                          {project.title}
+                        </CardTitle>
+
+                        <CardDescription className="line-clamp-3">
+                          {project.description}
+                        </CardDescription>
+                      </CardHeader>
+
+                      <CardFooter className="flex justify-between">
+                        <button className="text-md cursor-pointer">
+                          {project.link ? "Visit" : "No Link"}
+                        </button>
+
+                        <Link href={project.link} className="bg-zinc-400 px-4 py-2 rounded-xl flex items-center gap-2 border-gray-100 hover:bg-zinc-500 transition-all cursor-pointer text-md">
+                          Details <FaArrowRightLong />
+                        </Link>
+                      </CardFooter>
+                    </Card>
+                  ))}
                 </div>
               </Card>
             </TabsContent>
 
             <TabsContent value="certificates">
-              <Card className="bg-transparant">
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
-                  <Card className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50">
-                    <CardContent className="px-5">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+                {certificates.map((certi) => (
+                  <Dialog key={certi.title}>
+                    <DialogTrigger asChild>
+                      <Card className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50 cursor-pointer">
+                        <CardContent className="px-5">
+                          <Image
+                            src={certi.image}
+                            alt={certi.title}
+                            width={500}
+                            height={250}
+                            className="w-full h-50 object-cover rounded-xl"
+                            priority
+                          />
+                        </CardContent>
+                        <CardHeader>
+                          <CardTitle
+                            className={`text-white text-center tracking-wide text-lg ${dm_mono.className}`}
+                          >
+                            {certi.title}
+                          </CardTitle>
+                        </CardHeader>
+                      </Card>
+                    </DialogTrigger>
+
+                    <DialogContent className="max-w-2xl bg-black/90 p-2 border-white/20">
                       <Image
-                        src="/assets/portfolio.png"
-                        alt="Portfolio Image"
-                        width={500}
-                        height={250}
-                        className="w-full h-50 object-cover"
-                        priority
+                        src={certi.image}
+                        width={900}
+                        height={900}
+                        alt="Certificate"
+                        className="w-auto h-auto rounded-lg"
                       />
-                    </CardContent>
-                    <CardHeader>
-                      <CardTitle className="text-white tracking-wide text-lg">
-                        Project Name
-                      </CardTitle>
-                      <CardDescription className="line-clamp-3">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Omnis debitis doloremque magnam doloribus
-                        distinctio libero, molestias blanditiis praesentium
-                        officia ut.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardFooter className="flex justify-between">
-                      <button className="text-md cursor-pointer">
-                        No Link
-                      </button>
-                      <button className="bg-zinc-400 px-4 py-2 rounded-xl flex items-center gap-2 border-gray-100 hover:bg-zinc-500 transition-all cursor-pointer text-md">
-                        Details <FaArrowRightLong />
-                      </button>
-                    </CardFooter>
-                  </Card>
-                  <Card className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50">
-                    <CardContent className="px-5">
-                      <Image
-                        src="/assets/portfolio.png"
-                        alt="Portfolio Image"
-                        width={500}
-                        height={250}
-                        className="w-full h-50 object-cover"
-                        priority
-                      />
-                    </CardContent>
-                    <CardHeader>
-                      <CardTitle className="text-white tracking-wide text-lg">
-                        Project Name
-                      </CardTitle>
-                      <CardDescription className="line-clamp-3">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Omnis debitis doloremque magnam doloribus
-                        distinctio libero, molestias blanditiis praesentium
-                        officia ut.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardFooter className="flex justify-between">
-                      <button className="text-md cursor-pointer">
-                        No Link
-                      </button>
-                      <button className="bg-zinc-400 px-4 py-2 rounded-xl flex items-center gap-2 border-gray-100 hover:bg-zinc-500 transition-all cursor-pointer text-md">
-                        Details <FaArrowRightLong />
-                      </button>
-                    </CardFooter>
-                  </Card>
-                  <Card className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50">
-                    <CardContent className="px-5">
-                      <Image
-                        src="/assets/portfolio.png"
-                        alt="Portfolio Image"
-                        width={500}
-                        height={250}
-                        className="w-full h-50 object-cover"
-                        priority
-                      />
-                    </CardContent>
-                    <CardHeader>
-                      <CardTitle className="text-white tracking-wide text-lg">
-                        Project Name
-                      </CardTitle>
-                      <CardDescription className="line-clamp-3">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Omnis debitis doloremque magnam doloribus
-                        distinctio libero, molestias blanditiis praesentium
-                        officia ut.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardFooter className="flex justify-between">
-                      <button className="text-md cursor-pointer">
-                        No Link
-                      </button>
-                      <button className="bg-zinc-400 px-4 py-2 rounded-xl flex items-center gap-2 border-gray-100 hover:bg-zinc-500 transition-all cursor-pointer text-md">
-                        Details <FaArrowRightLong />
-                      </button>
-                    </CardFooter>
-                  </Card>
-                </div>
-              </Card>
+                    </DialogContent>
+                  </Dialog>
+                ))}
+              </div>
             </TabsContent>
 
             <TabsContent value="tech-stack">

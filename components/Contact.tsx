@@ -2,7 +2,9 @@ import React from 'react'
 
 function ContactPage() {
   return (
-    <div>ContactPage</div>
+    <section id="contact" className="min-h-secreen text-white scroll-mt-30 bg-black">
+
+    </section>
   )
 }
 

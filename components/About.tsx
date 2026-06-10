@@ -4,8 +4,10 @@ import { dm_mono } from "@/app/fonts";
 import TiltedCard from "@/components/ui/TiltedCard";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { GoArrowUpRight } from "react-icons/go";
+import Link from "next/link";
 
 function AboutPage() {
+
   return (
     <section
       id="about"
@@ -44,10 +46,10 @@ function AboutPage() {
               Download CV
             </button>
 
-            <button className="cursor-pointer flex items-center gap-2 px-5 py-3 rounded-full bg-gray-900 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-500">
+            <Link href="#projects" className="cursor-pointer flex items-center gap-2 px-5 py-3 rounded-full bg-gray-900 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-500">
               <GoArrowUpRight />
               View Projects
-            </button>
+            </Link>
           </div>
         </div>
       </div>

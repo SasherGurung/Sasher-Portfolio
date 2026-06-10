@@ -9,7 +9,7 @@ function Page() {
       <Hero />
       <About />
       <Projects />
-      {/* <Contact /> */}
+      <Contact />
     </>
   );
 }
