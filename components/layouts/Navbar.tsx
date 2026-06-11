@@ -15,7 +15,7 @@ function NavbarPage() {
     >
       <div className="flex justify-between items-center py-2 px-6 w-7xl m-6 border rounded-4xl bg-black border-white">
         <div>
-          <h1 className="text-xl font-bold">Sasher Gurung</h1>
+          <Link href="/" className="text-xl font-bold">Sasher Gurung</Link>
         </div>
 
         <nav className="flex gap-10 text-md tracking-wider text-gray-50 group-hover:text-white">

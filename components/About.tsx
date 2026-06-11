@@ -24,8 +24,8 @@ function AboutPage() {
           </div>
         </div>
 
-        <div className="space-y-6">
-          <p className="text-gray-400 text-lg font-bold tracking-widest uppercase">
+        <div className="space-y-5">
+          <p className="text-gray-400 text-xl font-bold tracking-widest uppercase">
             About Me
           </p>
 

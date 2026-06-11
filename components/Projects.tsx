@@ -2,14 +2,6 @@
 
 import GridBackgroundDemo from "@/components/ui/grid-background-demo";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { SiNextdotjs } from "react-icons/si";
-import { BsTypescript } from "react-icons/bs";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io5";
-import { FaGithub } from "react-icons/fa6";
-import { FaReact } from "react-icons/fa";
 import { dm_mono } from "@/app/fonts";
 import {
   Card,
@@ -24,75 +16,11 @@ import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import Link from "next/link";
+import { projects } from "@/src/data/projects";
+import { certificates } from "@/src/data/certificates";
+import { techStack } from "@/src/data/techStack";
 
 function ProjectsPage() {
-  const techStack = [
-    {
-      title: "React.js",
-      icon: <FaReact />,
-      color: "text-cyan-400",
-    },
-    {
-      title: "Next.js",
-      icon: <SiNextdotjs />,
-      color: "text-white",
-    },
-    {
-      title: "TypeScript",
-      icon: <BsTypescript />,
-      color: "text-blue-500",
-    },
-    {
-      title: "JavaScript",
-      icon: <IoLogoJavascript />,
-      color: "text-yellow-400",
-    },
-    {
-      title: "Tailwind CSS",
-      icon: <RiTailwindCssFill />,
-      color: "text-sky-400",
-    },
-    {
-      title: "HTML",
-      icon: <FaHtml5 />,
-      color: "text-orange-500",
-    },
-    {
-      title: "CSS",
-      icon: <FaCss3Alt />,
-      color: "text-blue-400",
-    },
-    {
-      title: "Git",
-      icon: <FaGithub />,
-      color: "text-orange-500",
-    },
-  ];
-
-  const certificates = [
-    {
-      title: "Internship Certificate",
-      image: "/certificates/internship.jpeg",
-    },
-  ];
-
-  const projects = [
-    {
-      title: "Shoe-care",
-      details: "",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      link: "https://shoe-care.vercel.app",
-      image: "/projects/shoe-care.png",
-    },
-    {
-      title: "Project Name",
-      details: "",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      link: "https://www.google.com",
-      image: "",
-    },
-  ];
-
   return (
     <section
       id="projects"
@@ -212,7 +140,7 @@ function ProjectsPage() {
                     >
                       <CardContent className="flex flex-col items-center justify-center py-4 gap-2">
                         <div className={`text-5xl ${tech.color}`}>
-                          {tech.icon}
+                          <tech.icon />
                         </div>
                         <p className="text-sm text-white">{tech.title}</p>
                       </CardContent>

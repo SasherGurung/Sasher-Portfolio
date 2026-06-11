@@ -10,7 +10,7 @@ const springValues = {
 export default function TiltedCard({
   imageSrc = "/assets/portfolio.png",
   altText = 'Tilted card image',
-  captionText = ' ',
+  captionText = '',
   containerHeight = '300px',
   containerWidth = '100%',
   imageHeight = '350px',
@@ -74,7 +74,7 @@ export default function TiltedCard({
   return (
     <figure
       ref={ref}
-      className="relative w-full h-full [perspective:800px] flex flex-col items-center justify-center"
+      className="cursor-pointer relative w-full h-full [perspective:800px] flex flex-col items-center justify-center"
       style={{
         height: containerHeight,
         width: containerWidth
@@ -118,7 +118,7 @@ export default function TiltedCard({
 
       {showTooltip && (
         <motion.figcaption
-          className="pointer-events-none absolute left-0 top-0 rounded-[4px] bg-white px-[10px] py-[4px] text-[10px] text-[#2d2d2d] opacity-0 z-[3] hidden sm:block"
+          className="pointer-events-none absolute left-0 top-0 rounded-[4px px-[10px] py-[4px] text-[10px] text-[#2d2d2d] opacity-0 z-[3] hidden sm:block"
           style={{
             x,
             y,

@@ -3,12 +3,12 @@
 import { dm_mono } from "@/app/fonts";
 import { Button } from "@/components/ui/button";
 import { LuMail, LuMapPin, LuSend } from "react-icons/lu";
-import { FaLinkedin, FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Link from "next/link";
+import { platforms } from "@/src/data/platforms";
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -71,33 +71,6 @@ function ContactPage() {
     }
   };
 
-  const platforms = [
-    {
-      title: "LinkedIn",
-      icon: <FaLinkedin />,
-      link: "https://www.linkedin.com/in/sasher-gurung-00b215311/",
-      hoverColor: "hover:text-blue-400",
-    },
-    {
-      title: "Instagram",
-      icon: <FaInstagram />,
-      link: "https://www.instagram.com/_thats_crazzy/",
-      hoverColor: "hover:text-pink-400" // Instagram pink/red
-    },
-    {
-      title: "Facebook",
-      icon: <FaFacebook />,
-      link: "https://www.facebook.com/sasher.gurung",
-      hoverColor: "hover:text-blue-400", 
-    },
-    {
-      title: "TikTok",
-      icon: <FaTiktok />,
-      link: "https://www.tiktok.com/@doobiewaah",
-      hoverColor: "hover:text-gray-50",
-    },
-  ];
-
   return (
     <section
       id="contact"
@@ -138,7 +111,9 @@ function ContactPage() {
               </div>
             </div>
 
-            <h1 className="text-xl font-semibold text-white p-3">Connect With Me</h1>
+            <h1 className="text-xl font-semibold text-white p-3">
+              Connect With Me
+            </h1>
 
             <div className="flex flex-wrap gap-3 pt-2">
               {platforms.map((platform, index) => (
@@ -147,7 +122,9 @@ function ContactPage() {
                   key={index}
                   className={`flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300 hover:bg-white/10 hover:scale-[1.03] transition ${platform.hoverColor}`}
                 >
-                  <span className="text-lg">{platform.icon}</span>
+                  <span className="text-lg">
+                    <platform.icon />
+                  </span>
                   <span>{platform.title}</span>
                 </Link>
               ))}

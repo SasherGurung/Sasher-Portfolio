@@ -3,19 +3,9 @@
 import TiltedCard from "@/components/ui/TiltedCard";
 import { dm_mono } from "@/app/fonts";
 import TextType from "@/components/ui/TextType";
-import { TbBrandTypescript } from "react-icons/tb";
-import { SiNextdotjs } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { techStack } from "@/src/data/hero-techStack";
 
 function HeroPage() {
-  const techStack = [
-    { label: "TypeScript", icon: <TbBrandTypescript /> },
-    { label: "Next.js", icon: <SiNextdotjs /> },
-    { label: "React", icon: <FaReact /> },
-    { label: "Tailwind", icon: <RiTailwindCssFill /> },
-  ];
-
   return (
     <section
       id="hero"
@@ -48,7 +38,7 @@ function HeroPage() {
                 key={index}
                 className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300 hover:bg-white/10 hover:scale-[1.03] transition"
               >
-                <span className="text-lg">{tech.icon}</span>
+                <span className="text-lg"><tech.icon /></span>
                 <span>{tech.label}</span>
               </div>
             ))}
