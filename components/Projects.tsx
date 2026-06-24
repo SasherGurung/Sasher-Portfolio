@@ -3,6 +3,8 @@
 import GridBackgroundDemo from "@/components/ui/grid-background-demo";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { dm_mono } from "@/app/fonts";
+import { FiArrowUpRight } from "react-icons/fi";
+
 import {
   Card,
   CardContent,
@@ -73,15 +75,24 @@ function ProjectsPage() {
                       </CardHeader>
 
                       <CardFooter className="flex justify-between">
-                        <button className="text-md cursor-pointer">
-                          {project.link ? "Visit" : "No Link"}
-                        </button>
+                        <Link
+                          href={project.link}
+                          className="bg-zinc-900 px-4 py-2 rounded-xl flex items-center gap-1 
+                            text-white border border-zinc-700 hover:bg-white hover:text-zinc-900 
+                            transition-all duration-300 cursor-pointer text-md"
+                        >
+                          Visit
+                          <FiArrowUpRight className="text-lg" />
+                        </Link>
 
                         <Link
                           href={project.link}
-                          className="bg-zinc-400 px-4 py-2 rounded-xl flex items-center gap-2 border-gray-100 hover:bg-zinc-500 transition-all cursor-pointer text-md"
+                          className="bg-white/90 text-black px-4 py-2 rounded-xl flex items-center gap-1 
+                            border border-transparent hover:bg-black hover:text-white 
+                            hover:border-white transition-all duration-300 cursor-pointer text-md"
                         >
-                          Details <FaArrowRightLong />
+                          Details
+                          <FaArrowRightLong />
                         </Link>
                       </CardFooter>
                     </Card>

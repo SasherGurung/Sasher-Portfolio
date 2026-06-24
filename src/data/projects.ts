@@ -11,7 +11,7 @@ export const projects: Project[] = [
       title: "Shoe-care",
       details: "",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      link: "https://shoe-care.vercel.app",
+      link: "https://shoe-care-three.vercel.app",
       image: "/projects/shoe-care.png",
     },
     {
