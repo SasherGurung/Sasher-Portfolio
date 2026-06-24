@@ -7,7 +7,6 @@ import { GoArrowUpRight } from "react-icons/go";
 import Link from "next/link";
 
 function AboutPage() {
-
   return (
     <section
       id="about"
@@ -41,12 +40,20 @@ function AboutPage() {
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="cursor-pointer flex items-center gap-2 px-5 py-3 rounded-full bg-gray-200  hover:bg-white text-black font-medium hover:scale-105 transition-all duration-500">
-              <IoDocumentTextOutline />
-              Download CV
-            </button>
+            <Link
+              href="https://drive.google.com/file/d/1wYLN2FDW09v5VSCv8ATrLfOhXJ3vdYkU/view?usp=sharing"
+              target="_blank"
+            >
+              <button className="cursor-pointer flex items-center gap-2 px-5 py-3 rounded-full bg-gray-200 hover:bg-white text-black font-medium hover:scale-105 transition-all duration-500">
+                <IoDocumentTextOutline />
+                Download CV
+              </button>
+            </Link>
 
-            <Link href="#projects" className="cursor-pointer flex items-center gap-2 px-5 py-3 rounded-full bg-gray-900 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-500">
+            <Link
+              href="#projects"
+              className="cursor-pointer flex items-center gap-2 px-5 py-3 rounded-full bg-gray-900 border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-500"
+            >
               <GoArrowUpRight />
               View Projects
             </Link>
