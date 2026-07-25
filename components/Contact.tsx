@@ -5,12 +5,13 @@ import { Button } from "@/components/ui/button";
 import { LuMail, LuMapPin, LuSend } from "react-icons/lu";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useState, type ChangeEvent, type FormEvent } from "react";
-import axios from "axios";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { platforms } from "@/src/data/platforms";
+import { useContactStore } from "@/lib/stores/contactStore";
 
 function ContactPage() {
+  const { postContact } = useContactStore();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -42,30 +43,8 @@ function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      await axios.post(
-        "https://formspree.io/f/mkoavwqk",
-        {
-          name,
-          email,
-          message,
-        },
-        {
-          headers: {
-            Accept: "application/json",
-          },
-        },
-      );
-
-      toast.success("Message sent successfully!");
-
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
-    } catch (error) {
-      toast.error("Failed to send message. Try again.");
-      console.log(error);
+      await postContact({ name, email, message });
+      setFormData({ name: "", email: "", message: "" });
     } finally {
       setIsSubmitting(false);
     }
@@ -146,7 +125,7 @@ function ContactPage() {
                       Your Name
                     </label>
                     <input
-                      type="text"
+                      type="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
