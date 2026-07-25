@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 import Link from "next/link";
 import { platforms } from "@/src/data/platforms";
 import { useContactStore } from "@/lib/stores/contactStore";
+import { contactSchema } from "@/app/schemas/contactSchema";
 
 function ContactPage() {
   const { postContact } = useContactStore();
@@ -35,8 +36,18 @@ function ContactPage() {
 
     const { name, email, message } = formData;
 
-    if (!name || !email || !message) {
-      toast.error("Please fill all the required fields");
+    const result = contactSchema.safeParse({
+      name,
+      email,
+      message,
+    });
+
+    if (!result.success) {
+      if (result.error.issues.length > 1) {
+        toast.error("Please fill all required inputs.");
+      } else {
+        toast.error(result.error.issues[0].message);
+      }
       return;
     }
 
