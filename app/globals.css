@@ -125,6 +125,6 @@
     @apply bg-[#0a0a0a] text-foreground antialiased;
   }
   html {
-    @apply font-sans scroll-smooth;
+    @apply font-sans
   }
 }

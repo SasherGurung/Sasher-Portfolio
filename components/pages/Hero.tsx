@@ -4,13 +4,15 @@ import TiltedCard from "@/components/ui/TiltedCard";
 import { dm_mono } from "@/app/fonts";
 import TextType from "@/components/ui/TextType";
 import { techStack } from "@/src/data/hero-techStack";
+import GridBackground from "../ui/grid-background-demo";
 
 function HeroPage() {
   return (
     <section
       id="hero"
-      className={`min-h-screen ${dm_mono.className} m-10 scroll-mt-30`}
+      className={`min-h-screen ${dm_mono.className} flex justify-center items-center relative`}
     >
+      <GridBackground />
       <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-6xl mx-auto px-6 md:px-10 gap-10">
         <div className="space-y-6">
           <p className="text-xs tracking-[0.25em] text-emerald-400 uppercase">
@@ -38,7 +40,9 @@ function HeroPage() {
                 key={index}
                 className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300 hover:bg-white/10 hover:scale-[1.03] transition"
               >
-                <span className="text-lg"><tech.icon /></span>
+                <span className="text-lg">
+                  <tech.icon />
+                </span>
                 <span>{tech.label}</span>
               </div>
             ))}

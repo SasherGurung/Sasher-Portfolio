@@ -26,10 +26,10 @@ function ProjectsPage() {
   return (
     <section
       id="projects"
-      className={`min-h-screen relative ${dm_mono.className} scroll-auto`}
+      className={`min-h-screen relative ${dm_mono.className} flex justify-center items-center`}
     >
       <GridBackgroundDemo />
-      <div className="relative mt-30">
+      <div className="relative">
         <h1 className="text-center text-3xl font-extrabold tracking-[0.4em] text-gray-400">
           PORTFOLIO SHOWCASE
         </h1>
@@ -45,7 +45,7 @@ function ProjectsPage() {
               <TabsTrigger value="certificates">Certificates</TabsTrigger>
               <TabsTrigger value="tech-stack">Tech Stack</TabsTrigger>
             </TabsList>
-            <TabsContent value="projects">
+            <TabsContent value="projects" className="min-h-100">
               <Card className="bg-transparant">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
                   {projects.map((project, index) => (
@@ -101,7 +101,7 @@ function ProjectsPage() {
               </Card>
             </TabsContent>
 
-            <TabsContent value="certificates">
+            <TabsContent value="certificates" className="min-h-100">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
                 {certificates.map((certi) => (
                   <Dialog key={certi.title}>
@@ -141,9 +141,9 @@ function ProjectsPage() {
               </div>
             </TabsContent>
 
-            <TabsContent value="tech-stack">
+            <TabsContent value="tech-stack" className="min-h-100">
               <Card className="bg-transparent">
-                <div className="grid grid-cols-6 gap-15 max-w-8xl mx-auto">
+                <div className="grid grid-cols-6 gap-15 max-w-full">
                   {techStack.map((tech) => (
                     <Card
                       key={tech.title}

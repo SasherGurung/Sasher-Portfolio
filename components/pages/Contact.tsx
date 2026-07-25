@@ -43,11 +43,7 @@ function ContactPage() {
     });
 
     if (!result.success) {
-      if (result.error.issues.length > 1) {
-        toast.error("Please fill all required inputs.");
-      } else {
-        toast.error(result.error.issues[0].message);
-      }
+      toast.error(result.error.issues[0].message);
       return;
     }
 
@@ -64,7 +60,7 @@ function ContactPage() {
   return (
     <section
       id="contact"
-      className={`scroll-mt-30 bg-black mt-30 text-white ${dm_mono.className} min-h-screen`}
+      className={`bg-black text-white ${dm_mono.className} min-h-screen flex justify-center items-center`}
     >
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
