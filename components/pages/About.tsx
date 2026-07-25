@@ -5,12 +5,13 @@ import TiltedCard from "@/components/ui/TiltedCard";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { GoArrowUpRight } from "react-icons/go";
 import Link from "next/link";
+import { experiences } from "@/src/data/experience";
 
 function AboutPage() {
   return (
     <section
       id="about"
-      className={`min-h-screen text-white ${dm_mono.className} scroll-mt-30`}
+      className={`min-h-screen bg-black text-white ${dm_mono.className} flex justify-center items-center flex-col`}
     >
       <h1 className="text-center text-3xl font-bold tracking-[0.4em] text-gray-400 mb-16">
         MY PERSONAL INFORMATION
@@ -60,21 +61,16 @@ function AboutPage() {
           </div>
         </div>
       </div>
-      <div className="flex justify-around m-10">
-        <div className="p-6 rounded-2xl w-100 border border-white/10 bg-white/5 hover:bg-white/10 transition">
-          <h3 className="text-4xl font-bold">1+</h3>
-          <p className="text-gray-400 mt-2">Years Learning</p>
-        </div>
-
-        <div className="p-6 rounded-2xl w-100 border border-white/10 bg-white/5 hover:bg-white/10 transition">
-          <h3 className="text-4xl font-bold">10+</h3>
-          <p className="text-gray-400 mt-2">Projects Built</p>
-        </div>
-
-        <div className="p-6 rounded-2xl w-100 border border-white/10 bg-white/5 hover:bg-white/10 transition">
-          <h3 className="text-4xl font-bold">5+</h3>
-          <p className="text-gray-400 mt-2">Technologies</p>
-        </div>
+      <div className="flex justify-around m-10 gap-5 pt-5">
+        {experiences.map((index) => (
+          <div
+            key={index.id}
+            className="p-6 rounded-2xl w-100 border border-white/10 bg-white/5 hover:bg-white/10 transition cursor-pointer"
+          >
+            <h3 className="text-4xl font-bold">{index.exp}</h3>
+            <p className="text-gray-400 mt-2">{index.title}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -10,12 +10,14 @@ type Contact = {
 
 type ContactState = {
   contacts: Contact[];
+
   postContact: (contact: Contact) => Promise<void>;
 };
 
 export const useContactStore = create<ContactState>((set) => ({
   contacts: [],
 
+  // Post Contacts
   postContact: async (contact) => {
     try {
       const { data } = await api.post("/f/mkoavwqk", contact);
