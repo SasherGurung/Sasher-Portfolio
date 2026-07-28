@@ -1,7 +1,7 @@
 import { SiNextdotjs, SiZod } from "react-icons/si";
 import { BsFillLayersFill, BsTypescript } from "react-icons/bs";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { FaCode, FaDatabase, FaHtml5 } from "react-icons/fa";
+import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa6";

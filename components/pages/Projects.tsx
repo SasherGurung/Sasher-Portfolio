@@ -1,7 +1,6 @@
 "use client";
 
 import GridBackgroundDemo from "@/components/ui/grid-background-demo";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { dm_mono } from "@/app/fonts";
 import { FiArrowUpRight } from "react-icons/fi";
 
@@ -73,8 +72,23 @@ function ProjectsPage() {
                           {project.description}
                         </CardDescription>
                       </CardHeader>
+                      <CardContent>
+                        <div className="flex flex-wrap gap-2 pt-2 w-md">
+                          {project.techStack.map((tech, index) => (
+                            <div
+                              key={`${project.id}-${index}`}
+                              className="flex items-center gap-2 px-2 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-gray-300 hover:bg-white/20 cursor-pointer"
+                            >
+                              <span className="text-xs ">
+                                <tech.icon />
+                              </span>
+                              <span>{tech.title}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
 
-                      <CardFooter className="flex justify-between">
+                      <CardFooter className="flex justify-end">
                         <Link
                           href={project.link}
                           className="bg-zinc-900 px-4 py-2 rounded-xl flex items-center gap-1 
@@ -83,16 +97,6 @@ function ProjectsPage() {
                         >
                           Visit
                           <FiArrowUpRight className="text-lg" />
-                        </Link>
-
-                        <Link
-                          href={project.link}
-                          className="bg-white/90 text-black px-4 py-2 rounded-xl flex items-center gap-1 
-                            border border-transparent hover:bg-black hover:text-white 
-                            hover:border-white transition-all duration-300 cursor-pointer text-md"
-                        >
-                          Details
-                          <FaArrowRightLong />
                         </Link>
                       </CardFooter>
                     </Card>
