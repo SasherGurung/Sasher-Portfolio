@@ -38,12 +38,12 @@ function HeroPage() {
             {techStack.map((tech, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300 hover:bg-white/10 hover:scale-[1.03] transition"
+                className="flex cursor-pointer items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300 hover:bg-white/10 hover:scale-[1.03] transition"
               >
-                <span className="text-lg">
+                <span className={`text-lg`}>
                   <tech.icon />
                 </span>
-                <span>{tech.label}</span>
+                <span>{tech.title}</span>
               </div>
             ))}
           </div>

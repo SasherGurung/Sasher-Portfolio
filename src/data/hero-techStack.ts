@@ -1,30 +1,35 @@
-import { TbBrandTypescript } from "react-icons/tb";
 import { SiNextdotjs } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 
 import { IconType } from "react-icons/lib";
+import { BsTypescript } from "react-icons/bs";
+import { IoLogoJavascript } from "react-icons/io5";
 
 export type TechStack = {
-    label: string;
+    title: string;
     icon: IconType
 }
 
 export const techStack: TechStack[] = [
   {
-    label: "TypeScript",
-    icon: TbBrandTypescript,
-  },
-  {
-    label: "Next.js",
-    icon: SiNextdotjs,
-  },
-  {
-    label: "React",
+    title: "React.js",
     icon: FaReact,
   },
   {
-    label: "Tailwind",
+    title: "Next.js",
+    icon: SiNextdotjs,
+  },
+  {
+    title: "TypeScript",
+    icon: BsTypescript,
+  },
+  {
+    title: "JavaScript",
+    icon: IoLogoJavascript,
+  },
+  {
+    title: "Tailwind CSS",
     icon: RiTailwindCssFill,
   },
 ];
