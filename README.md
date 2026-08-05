@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio Website
 
-## Getting Started
+A modern and responsive personal portfolio website designed to showcase my projects, technical skills, professional experience, and journey as a frontend developer. The platform focuses on providing a clean, interactive, and user-friendly experience with modern UI design principles and optimized performance.
+Built with modern frontend technologies including **Next.js, TypeScript, Tailwind CSS and shadcn/ui**, the portfolio follows a scalable and maintainable architecture with reusable components and a focus on clean code practices.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* Modern and responsive user interface
+* Professional introduction and profile showcase
+* Project showcase with detailed information
+* Skills and technology display
+* Experience and achievements section
+* Contact information and social links
+* Smooth navigation and optimized user experience
+* Reusable UI components
+* Mobile-friendly responsive design
+* Fast performance with Next.js
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Next.js** - React framework for building fast and scalable web applications
+* **React** - Component-based UI development
+* **TypeScript** - Type-safe JavaScript development
+* **Tailwind CSS** - Utility-first CSS framework for responsive styling
+* **shadcn/ui** - Accessible and customizable UI component library
+* **Lucide React** - Modern icon library for UI elements
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development Highlights
 
-## Learn More
+* Designed and developed the complete portfolio website from scratch
+* Implemented reusable components using component-based architecture
+* Built a clean and maintainable frontend structure
+* Applied modern UI/UX principles to improve user experience
+* Optimized responsiveness across different screen sizes
+* Followed best practices for scalable frontend development
 
-To learn more about Next.js, take a look at the following resources:
+## Development Tools
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* **Git & GitHub** - Version control and project management
+* **VS Code** - Development environment
+* **Vercel** - Deployment and hosting platform
