@@ -1,5 +1,3 @@
-"use client";
-
 import TiltedCard from "@/components/ui/TiltedCard";
 import { dm_mono } from "@/app/fonts";
 import TextType from "@/components/ui/TextType";

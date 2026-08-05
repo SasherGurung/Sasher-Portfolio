@@ -1,5 +1,3 @@
-"use client";
-
 import GridBackgroundDemo from "@/components/ui/grid-background-demo";
 import { dm_mono } from "@/app/fonts";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -50,15 +48,15 @@ function ProjectsPage() {
                   {projects.map((project, index) => (
                     <Card
                       key={index}
-                      className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50"
+                      className="bg-black/30 border border-white/40 rounded-3xl w-md overflow-hidden hover:bg-black/50"
                     >
                       <CardContent className="px-5">
                         <Image
                           src={project.image || "/assets/portfolio.png"}
                           alt={project.title}
-                          width={500}
-                          height={250}
-                          className="w-full h-50 object-cover"
+                          width={900}
+                          height={900}
+                          className="w-full h-30 object-cover"
                           priority
                         />
                       </CardContent>
@@ -110,14 +108,14 @@ function ProjectsPage() {
                 {certificates.map((certi) => (
                   <Dialog key={certi.title}>
                     <DialogTrigger asChild>
-                      <Card className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50 cursor-pointer">
+                      <Card className="bg-black/30 border border-white/40 rounded-3xl w-md overflow-hidden hover:bg-black/50 cursor-pointer">
                         <CardContent className="px-5">
                           <Image
                             src={certi.image}
                             alt={certi.title}
-                            width={500}
-                            height={250}
-                            className="w-full h-50 object-cover rounded-xl"
+                            width={900}
+                            height={900}
+                            className="w-full h-72 object-cover rounded-xl"
                             priority
                           />
                         </CardContent>
@@ -147,11 +145,11 @@ function ProjectsPage() {
 
             <TabsContent value="tech-stack" className="min-h-100">
               <Card className="bg-transparent">
-                <div className="grid grid-cols-6 gap-15 max-w-full">
+                <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
                   {techStack.map((tech) => (
                     <Card
                       key={tech.title}
-                      className="bg-black/30 border border-white/40 rounded-2xl hover:bg-black/50 cursor-pointer hover:scale-105 transition-all duration-300z`"
+                      className="bg-black/30 border border-white/40 rounded-2xl hover:bg-black/50 cursor-pointer w-53.5 hover:scale-105 transition-all duration-300"
                     >
                       <CardContent className="flex flex-col items-center justify-center py-4 gap-2">
                         <div className={`text-5xl ${tech.color}`}>

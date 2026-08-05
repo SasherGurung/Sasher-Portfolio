@@ -1,5 +1,3 @@
-"use client";
-
 import { dm_mono } from "@/app/fonts";
 import TiltedCard from "@/components/ui/TiltedCard";
 import { IoDocumentTextOutline } from "react-icons/io5";
@@ -42,7 +40,7 @@ function AboutPage() {
 
           <div className="flex flex-wrap gap-4 pt-4">
             <Link
-              href="https://drive.google.com/file/d/1wYLN2FDW09v5VSCv8ATrLfOhXJ3vdYkU/view?usp=sharing"
+              href="https://drive.google.com/file/d/1DcsEoEERdHLA1zp7MgrLLFpfAphD4JiG/view?usp=drive_link"
               target="_blank"
             >
               <button className="cursor-pointer flex items-center gap-2 px-5 py-3 rounded-full bg-gray-200 hover:bg-white text-black font-medium hover:scale-105 transition-all duration-500">

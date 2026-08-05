@@ -1,5 +1,3 @@
-"use client";
-
 import { dm_mono } from "@/app/fonts";
 import { Button } from "@/components/ui/button";
 import { LuMail, LuMapPin, LuSend } from "react-icons/lu";
