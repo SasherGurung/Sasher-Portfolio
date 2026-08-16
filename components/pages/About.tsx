@@ -4,6 +4,7 @@ import { IoDocumentTextOutline } from "react-icons/io5";
 import { GoArrowUpRight } from "react-icons/go";
 import Link from "next/link";
 import { experiences } from "@/src/data/experience";
+import Image from "next/image";
 
 function AboutPage() {
   return (
@@ -17,7 +18,18 @@ function AboutPage() {
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 items-center">
         <div className="flex justify-center">
-          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg grayscale hover:grayscale-0 transition duration-500">
+          <div className="block sm:hidden w-full max-w-xs">
+            <Image
+              src="/profile/profile.png"
+              alt="Profile"
+              width={900}
+              height={900}
+              className="w-full rounded-xl h-90 object-cover"
+              priority
+            />
+          </div>
+
+          <div className="hidden sm:block w-full max-w-sm md:max-w-md lg:max-w-lg grayscale hover:grayscale-0 transition duration-500">
             <TiltedCard />
           </div>
         </div>

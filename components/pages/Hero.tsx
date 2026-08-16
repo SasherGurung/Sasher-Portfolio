@@ -3,6 +3,7 @@ import { dm_mono } from "@/app/fonts";
 import TextType from "@/components/ui/TextType";
 import { techStack } from "@/src/data/hero-techStack";
 import GridBackground from "../ui/grid-background-demo";
+import Image from "next/image";
 
 function HeroPage() {
   return (
@@ -54,7 +55,18 @@ function HeroPage() {
           </div>
 
           <div className="flex items-center justify-center order-1 lg:order-2 mb-6 md:mb-8 lg:mb-0">
-            <div className="w-full max-w-sm md:max-w-md lg:max-w-lg grayscale hover:grayscale-0 transition duration-500">
+            <div className="block sm:hidden w-full max-w-xs">
+              <Image
+                src="/profile/profile.png"
+                alt="Profile"
+                width={900}
+                height={900}
+                className="w-full h-90 rounded-xl object-cover"
+                priority
+              />
+            </div>
+
+            <div className="hidden sm:block w-full max-w-sm md:max-w-md lg:max-w-lg grayscale hover:grayscale-0 transition duration-500">
               <TiltedCard />
             </div>
           </div>
