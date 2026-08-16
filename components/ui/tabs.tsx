@@ -16,7 +16,7 @@ function Tabs({
       data-slot="tabs"
       data-orientation={orientation}
       className={cn(
-        "group/tabs flex gap-2 data-horizontal:flex-col",
+        "group/tabs flex gap-4 data-horizontal:flex-col",
         className,
       )}
       {...props}
@@ -84,7 +84,7 @@ function TabsTrigger({
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
       className={cn(
-        "relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1 rounded-4xl px-1.5 py-5 text-sm font-medium whitespace-nowrap bg-zinc-800/50 data-active:bg-zinc-700 data-active:text-white data-active:border-zinc-500 w-sm",
+        "relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1 rounded-4xl px-1.5 py-5.5 text-sm font-medium whitespace-nowrap bg-zinc-800/50 data-active:bg-zinc-700 data-active:text-white data-active:border-zinc-500 w-sm border border-zinc-500",
 
         "transition-all duration-300  hover:text-white cursor-pointer bg-transparant backdrop-blur-sm",
         className,

@@ -58,21 +58,21 @@ function ContactPage() {
   return (
     <section
       id="contact"
-      className={`bg-black text-white ${dm_mono.className} min-h-screen flex justify-center items-center`}
+      className={`bg-black text-white ${dm_mono.className} min-h-screen flex justify-center items-center px-4 sm:px-6 md:px-10 py-10`}
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto w-full max-w-6xl">
         <div className="text-center">
-          <h1 className="text-center text-3xl font-extrabold tracking-[0.4em] text-gray-400">
+          <h1 className="text-center text-2xl sm:text-3xl font-extrabold tracking-[0.3em] sm:tracking-[0.4em] text-gray-400">
             CONTACT ME
           </h1>
-          <h2 className="text-2xl mt-2 font-semibold">
+          <h2 className="text-lg sm:text-2xl mt-2 font-semibold">
             Let&apos;s build something great together
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/40 backdrop-blur">
-            <h3 className="text-2xl font-semibold text-white">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-2xl shadow-black/40 backdrop-blur">
+            <h3 className="text-xl sm:text-2xl font-semibold text-white text-center">
               Let&apos;s Connect
             </h3>
             <p className="mt-4 text-sm leading-7 text-zinc-400 sm:text-base">
@@ -80,31 +80,31 @@ function ContactPage() {
               opportunities to create beautiful, user-focused experiences.
             </p>
 
-            <div className="mt-3 space-y-1">
-              <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-zinc-950/70 p-4 hover:scale-105 transition-all duration-300 cursor-pointer">
+            <div className="mt-3 space-y-2">
+              <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-zinc-950/70 p-4 hover:scale-[1.02] transition-all duration-300 cursor-pointer">
                 <LuMail className="h-5 w-5 text-cyan-400 font-bold" />
-                <span className="text-sm text-zinc-300 hover:text-white">
+                <span className="text-sm sm:text-base text-zinc-300 hover:text-white">
                   sashergrg602@gmail.com
                 </span>
               </div>
-              <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-zinc-950/70 p-4 hover:scale-105 transition-all duration-300 cursor-pointer">
+              <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-zinc-950/70 p-4 hover:scale-[1.02] transition-all duration-300 cursor-pointer">
                 <LuMapPin className="h-5 w-5 text-cyan-400" />
-                <span className="text-sm text-zinc-300 hover:text-white">
+                <span className="text-sm sm:text-base text-zinc-300 hover:text-white">
                   Nepal, Pokhara
                 </span>
               </div>
             </div>
 
-            <h1 className="text-xl font-semibold text-white p-3">
+            <h1 className="text-lg sm:text-xl font-semibold text-white p-3 text-center">
               Connect With Me
             </h1>
 
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex flex-wrap gap-3 pt-2 justify-center sm:justify-start">
               {platforms.map((platform, index) => (
                 <Link
                   href={platform.link}
                   key={index}
-                  className={`flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300 hover:bg-white/10 hover:scale-[1.03] transition ${platform.hoverColor}`}
+                  className={`flex items-center gap-3 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm sm:text-base text-gray-300 hover:bg-white/10 hover:scale-[1.03] transition ${platform.hoverColor}`}
                 >
                   <span className="text-lg">
                     <platform.icon />
@@ -117,14 +117,14 @@ function ContactPage() {
 
           <Card className="rounded-3xl border border-white/10 bg-zinc-950/70 p-6 shadow-2xl shadow-black/40">
             <CardHeader className="px-0 pb-4">
-              <CardTitle className="text-2xl font-semibold text-white">
+              <CardTitle className="text-xl sm:text-2xl font-semibold text-white">
                 Send a Message
               </CardTitle>
             </CardHeader>
 
             <CardContent className="px-0">
               <form className="space-y-5" onSubmit={handleSubmit}>
-                <div className="grid gap-5 sm:grid-cols-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="mb-2 block text-sm text-zinc-300">
                       Your Name
@@ -135,7 +135,7 @@ function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Enter your name"
-                      className="w-full rounded-xl border border-white/10 bg-zinc-900/80 px-4 py-3 text-sm text-white outline-none transition focus:border-gray-200 focus:ring-2 focus:ring-cyan-400/20"
+                      className="w-full rounded-xl border border-white/10 bg-zinc-900/80 px-4 py-3 text-sm sm:text-base text-white outline-none transition focus:border-gray-200 focus:ring-2 focus:ring-cyan-400/20"
                     />
                   </div>
 
@@ -149,7 +149,7 @@ function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="Enter your email"
-                      className="w-full rounded-xl border border-white/10 bg-zinc-900/80 px-4 py-3 text-sm text-white outline-none transition focus:border-gray-200 focus:ring-2 focus:ring-cyan-400/20"
+                      className="w-full rounded-xl border border-white/10 bg-zinc-900/80 px-4 py-3 text-sm sm:text-base text-white outline-none transition focus:border-gray-200 focus:ring-2 focus:ring-cyan-400/20"
                     />
                   </div>
                 </div>
@@ -163,15 +163,15 @@ function ContactPage() {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Write your message here"
-                    className="min-h-36 w-full rounded-xl border border-white/10 bg-zinc-900/80 px-4 py-3 text-sm text-white outline-none transition focus:border-gray-200 focus:ring-2 focus:ring-cyan-400/20"
+                    placeholder="Write your message here..."
+                    className="min-h-36 w-full rounded-xl border border-white/10 bg-zinc-900/80 px-4 py-3 text-sm sm:text-base text-white outline-none transition focus:border-gray-200 focus:ring-2 focus:ring-cyan-400/20"
                   />
                 </div>
 
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full cursor-pointer gap-2 rounded-xl bg-white p-5 text-sm font-semibold text-black hover:bg-gray-200 disabled:cursor-not-allowed disabled:opacity-70"
+                  className="w-full cursor-pointer gap-2 rounded-xl bg-white p-4 sm:p-5 text-sm sm:text-base font-semibold text-black hover:bg-gray-200 disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   <LuSend className="h-4 w-4" />
                   {isSubmitting ? "Sending..." : "Send Message"}

@@ -23,32 +23,40 @@ function ProjectsPage() {
   return (
     <section
       id="projects"
-      className={`min-h-screen relative ${dm_mono.className} flex justify-center items-center`}
+      className={`min-h-screen relative ${dm_mono.className} flex justify-center items-center px-4 py-10`}
     >
       <GridBackgroundDemo />
-      <div className="relative">
-        <h1 className="text-center text-3xl font-extrabold tracking-[0.4em] text-gray-400">
+      <div className="relative w-full max-w-7xl">
+        <h1 className="text-center text-2xl sm:text-3xl font-extrabold tracking-[0.3em] sm:tracking-[0.4em] text-gray-400">
           PORTFOLIO SHOWCASE
         </h1>
-        <p className="text-center text-base m-5">
+        <p className="text-center text-sm sm:text-base m-5">
           Explore my journey with Projects, Certifications and TechStack.
         </p>
         <div className="flex justify-center">
-          <Tabs defaultValue="projects">
-            <TabsList className="w-full bg-transparent rounded-4xl py-7 px-4 border border-gray-500 backdrop-blur-2xl">
-              <TabsTrigger value="projects" className="cursor-pointer">
+          <Tabs defaultValue="projects" className="w-full">
+            <TabsList className="w-full bg-transparent rounded-4xl py-7 px-4 flex flex-wrap gap-1 h-auto pb-11">
+              <TabsTrigger
+                value="projects"
+                className="cursor-pointer flex-1 text-sm"
+              >
                 Projects
               </TabsTrigger>
-              <TabsTrigger value="certificates">Certificates</TabsTrigger>
-              <TabsTrigger value="tech-stack">Tech Stack</TabsTrigger>
+              <TabsTrigger value="certificates" className="flex-1 text-sm">
+                Certificates
+              </TabsTrigger>
+              <TabsTrigger value="tech-stack" className="flex-1 text-sm">
+                Tech Stack
+              </TabsTrigger>
             </TabsList>
+
             <TabsContent value="projects" className="min-h-100">
-              <Card className="bg-transparant">
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
+              <Card className="bg-transparent">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
                   {projects.map((project, index) => (
                     <Card
                       key={index}
-                      className="bg-black/30 border border-white/40 rounded-3xl w-md overflow-hidden hover:bg-black/50"
+                      className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50"
                     >
                       <CardContent className="px-5">
                         <Image
@@ -56,7 +64,7 @@ function ProjectsPage() {
                           alt={project.title}
                           width={900}
                           height={900}
-                          className="w-full h-30 object-cover"
+                          className="w-full h-40 sm:h-30 object-cover"
                           priority
                         />
                       </CardContent>
@@ -65,19 +73,19 @@ function ProjectsPage() {
                         <CardTitle className="text-white tracking-wide text-lg">
                           {project.title}
                         </CardTitle>
-
                         <CardDescription className="line-clamp-3">
                           {project.description}
                         </CardDescription>
                       </CardHeader>
+
                       <CardContent>
-                        <div className="flex flex-wrap gap-2 pt-2 w-md">
+                        <div className="flex flex-wrap gap-2 pt-2">
                           {project.techStack.map((tech, index) => (
                             <div
                               key={`${project.id}-${index}`}
                               className="flex items-center gap-2 px-2 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-gray-300 hover:bg-white/20 cursor-pointer"
                             >
-                              <span className="text-xs ">
+                              <span className="text-xs">
                                 <tech.icon />
                               </span>
                               <span>{tech.title}</span>
@@ -104,24 +112,24 @@ function ProjectsPage() {
             </TabsContent>
 
             <TabsContent value="certificates" className="min-h-100">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                 {certificates.map((certi) => (
                   <Dialog key={certi.title}>
                     <DialogTrigger asChild>
-                      <Card className="bg-black/30 border border-white/40 rounded-3xl w-md overflow-hidden hover:bg-black/50 cursor-pointer">
+                      <Card className="bg-black/30 border border-white/40 rounded-3xl overflow-hidden hover:bg-black/50 cursor-pointer">
                         <CardContent className="px-5">
                           <Image
                             src={certi.image}
                             alt={certi.title}
                             width={900}
                             height={900}
-                            className="w-full h-72 object-cover rounded-xl"
+                            className="w-full h-48 sm:h-72 object-cover rounded-xl"
                             priority
                           />
                         </CardContent>
                         <CardHeader>
                           <CardTitle
-                            className={`text-white text-center tracking-wide text-lg ${dm_mono.className}`}
+                            className={`text-white text-center tracking-wide text-base sm:text-lg ${dm_mono.className}`}
                           >
                             {certi.title}
                           </CardTitle>
@@ -129,13 +137,13 @@ function ProjectsPage() {
                       </Card>
                     </DialogTrigger>
 
-                    <DialogContent className="max-w-2xl bg-black/90 p-2 border-white/20">
+                    <DialogContent className="max-w-2xl w-[95vw] bg-black/90 p-2 border-white/20">
                       <Image
                         src={certi.image}
                         width={900}
                         height={900}
                         alt="Certificate"
-                        className="w-auto h-auto rounded-lg"
+                        className="w-full h-auto rounded-lg"
                       />
                     </DialogContent>
                   </Dialog>
@@ -145,17 +153,19 @@ function ProjectsPage() {
 
             <TabsContent value="tech-stack" className="min-h-100">
               <Card className="bg-transparent">
-                <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-5">
                   {techStack.map((tech) => (
                     <Card
                       key={tech.title}
-                      className="bg-black/30 border border-white/40 rounded-2xl hover:bg-black/50 cursor-pointer w-53.5 hover:scale-105 transition-all duration-300"
+                      className="bg-black/30 border border-white/40 rounded-2xl hover:bg-black/50 cursor-pointer hover:scale-105 transition-all duration-300"
                     >
-                      <CardContent className="flex flex-col items-center justify-center py-4 gap-2">
-                        <div className={`text-5xl ${tech.color}`}>
+                      <CardContent className="flex flex-col items-center justify-center py-4 gap-2 px-2">
+                        <div className={`text-4xl sm:text-5xl ${tech.color}`}>
                           <tech.icon />
                         </div>
-                        <p className="text-sm text-white">{tech.title}</p>
+                        <p className="text-xs sm:text-sm text-white text-center leading-tight">
+                          {tech.title}
+                        </p>
                       </CardContent>
                     </Card>
                   ))}
