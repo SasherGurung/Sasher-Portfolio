@@ -52,7 +52,7 @@ function AboutPage() {
 
           <div className="flex flex-wrap gap-2 pt-4 justify-center md:justify-start">
             <Link
-              href="https://drive.google.com/file/d/1DcsEoEERdHLA1zp7MgrLLFpfAphD4JiG/view?usp=drive_link"
+              href="https://drive.google.com/file/d/113t5xVQqsQQf0kNVb2XAMnkup9_cb8b_/view?usp=drive_link"
               target="_blank"
             >
               <button className="cursor-pointer flex items-center gap-2 px-5 py-3 rounded-full bg-gray-200 hover:bg-white text-black font-medium hover:scale-105 transition-all duration-500">

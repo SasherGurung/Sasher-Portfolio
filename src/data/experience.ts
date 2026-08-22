@@ -13,7 +13,7 @@ export const experiences: Exp[] = [
     },
     {
       id: 2,
-      exp: "10+",
+      exp: "7+",
       title: "Projects Built",
     },
     {
